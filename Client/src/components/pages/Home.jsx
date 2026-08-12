@@ -3,7 +3,7 @@ import hero_image from "../../assets/front/hero_img.png";
 const Home = () => {
   return (
     <div className="bg-white" style={{ width: "100%" }}>
-      <div className="row m-auto border border-dark d-flex justify-content-center align-items-center" style={{ minHeight: "30px", width: "83%" }}>
+      <div className="row m-auto border border-dark d-flex justify-content-center align-items-center" style={{ minHeight: "500px", width: "83%" }}>
         {/* Left Content */}
         <div className="col-sm-12 col-md-12 col-lg-6 d-flex flex-column justify-content-center p-5" style={{ backgroundColor: "#f9f7f4" }}>
           <p className="mb-3" style={{ fontSize: "14px", fontWeight: "600", color: "#666", letterSpacing: "2px" }}>

@@ -5,14 +5,14 @@ const Home = () => {
     <div className="bg-white" style={{ width: "100%" }}>
       <div className="row m-auto border border-dark d-flex justify-content-center align-items-center" style={{ minHeight: "500px", width: "83%" }}>
         {/* Left Content */}
-        <div className="col-sm-12 col-md-12 col-lg-6 d-flex flex-column justify-content-center p-5" style={{ backgroundColor: "#f9f7f4" }}>
+        <div className="col-sm-12 col-md-12 col-lg-6 d-flex flex-column align-items-center justify-content-center p-5" style={{ backgroundColor: "#f9f7f4" }}>
           <p className="mb-3" style={{ fontSize: "14px", fontWeight: "600", color: "#666", letterSpacing: "2px" }}>
             ─── OUR BESTSELLERS
           </p>
-          <h1 className="mb-4" style={{ fontSize: "56px", fontWeight: "700", color: "#1a1a1a", lineHeight: "1.2" }}>
+          <h1 className="mb-4 " style={{ fontSize: "30px", fontWeight: "500", color: "#1a1a1a", lineHeight: "1.2" }}>
             Latest Arrivals
           </h1>
-          <button
+          <button 
             style={{
               width: "fit-content",
               padding: "12px 40px",
@@ -32,13 +32,12 @@ const Home = () => {
           </button>
         </div>
 
-        {/* Right Image */}
-        <div className="col-sm-12 col-md-12 col-lg-6 d-flex justify-content-center align-items-center" style={{ backgroundColor: "#deb1a07b", minHeight: "600px" }}>
+    <div className="col-sm-12 col-md-12 col-lg-6 d-flex justify-content-center align-items-center" style={{ backgroundColor: "#deb1a07b" }}>
           <img
             src={hero_image}
             alt="Hero Image"
             className="img-fluid"
-            style={{ height: "100%", width: "100%", objectFit: "cover" }}
+            style={{ height: "auto", width: "100%", objectFit: "cover" }}
           />
         </div>
       </div>

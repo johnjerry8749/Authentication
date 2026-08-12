@@ -46,7 +46,7 @@ const Home = () => {
       <div className="bg-white" style={{ width: "100%" }}>
         <div className="row m-auto border border-dark d-flex justify-content-center align-items-center" style={{ width: "81%" }}>
           {/* Left Content */}
-          <div className="col-sm-12 col-md-12 col-lg-6 d-flex flex-column justify-content-center p-5" style={{ backgroundColor: "#f9f7f4" }}>
+          <div className="col-sm-12 col-md-12 bg-white col-lg-6 d-flex flex-column justify-content-center p-5" style={{ backgroundColor: "#f9f7f4" }}>
             <p className="mb-4 hero-label" style={{ fontWeight: "600",  letterSpacing: "2px", textTransform: "uppercase" }}>
               ── OUR BESTSELLERS
             </p>

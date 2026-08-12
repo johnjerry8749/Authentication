@@ -1,16 +1,13 @@
-import Navbar from "../common/Navbar";
-import Footer from "../common/Footer";
+import Navbar from "../common/Navbar.jsx";
+import Footer from "../common/Footer.jsx";
 
 const Home = () => {
   return (
-    <>
-      <Navbar />
-      <div className="border border-danger ">
-
-
-      </div>
-      <Footer />
-    </>
+      <div className="">
+        <Navbar />
+        
+        <Footer />
+      </div>          
   )
 }
 

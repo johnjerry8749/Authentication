@@ -61,6 +61,9 @@ const Navbar = () => {
                   alt="cart"
                   style={{ width: "25px", height: "auto" }}
                 />
+                <div className="border border-danger translate-middle badge rounded-circle bg-danger">
+                  3
+                </div>
               </div>
               <div className="image-container ps-2 mt-2 d-lg-none d-md-flex">
                 <img
@@ -68,6 +71,7 @@ const Navbar = () => {
                   alt="menu"
                   style={{ width: "25px", height: "auto" }}
                 />
+                
               </div>
             </div>
           </div>

@@ -1,5 +1,9 @@
 import { Link } from "react-router-dom";
 import Logo from "../../assets/front/logo.png";
+import cart_icon from "../../assets/front/cart_icon.png";
+import user_icon from "../../assets/front/profile_icon.png";
+import search_icon from "../../assets/front/search_icon.png";
+import menu_icon from "../../assets/front/menu_icon.png";
 
 const Navbar = () => {
   return (
@@ -34,8 +38,35 @@ const Navbar = () => {
                 Contact
               </Link>
             </div>
-            <div className="col-3 border border-danger">
-              One of three columns
+            <div className="col-3 border border-danger d-flex gap-3 p-2 justify-content-end">
+              <div className="image-container ps-2 mt-2">
+                <img
+                  src={search_icon}
+                  alt="search"
+                  style={{ width: "25px", height: "auto" }}
+                />
+              </div>
+              <div className="image-container ps-2 mt-2">
+                <img
+                  src={user_icon}
+                  alt="user"
+                  style={{ width: "25px", height: "auto" }}
+                />
+              </div>
+              <div className="image-container ps-2 mt-2">
+                <img
+                  src={cart_icon}
+                  alt="cart"
+                  style={{ width: "25px", height: "auto" }}
+                />
+              </div>
+              <div className="image-container ps-2 mt-2">
+                <img
+                  src={menu_icon}
+                  alt="menu"
+                  style={{ width: "25px", height: "auto" }}
+                />
+              </div>
             </div>
           </div>
         </div>

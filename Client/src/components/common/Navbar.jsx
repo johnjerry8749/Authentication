@@ -24,7 +24,8 @@ const Navbar = () => {
                 />
               </div>
             </div>
-            <div className="col-4 fs-4  d-flex gap-4 p-4 justify-content-start ">
+            <div className="col-4 fs-4 ">
+              <div className="Navbar-links d-none  gap-4 p-4 justify-content-start d-md-none d-lg-flex">
               <Link to="/" className="text-decoration-none text-dark">
                 Home
               </Link>
@@ -37,8 +38,9 @@ const Navbar = () => {
               <Link to="/" className="text-decoration-none text-dark">
                 Contact
               </Link>
+              </div>
             </div>
-            <div className="col-3 border border-danger d-flex gap-3 p-2 justify-content-end">
+            <div className="col-3 d-flex gap-3 p-2 ps-3 justify-content-end">
               <div className="image-container ps-2 mt-2">
                 <img
                   src={search_icon}
@@ -60,7 +62,7 @@ const Navbar = () => {
                   style={{ width: "25px", height: "auto" }}
                 />
               </div>
-              <div className="image-container ps-2 mt-2">
+              <div className="image-container ps-2 mt-2 d-lg-none d-md-flex">
                 <img
                   src={menu_icon}
                   alt="menu"

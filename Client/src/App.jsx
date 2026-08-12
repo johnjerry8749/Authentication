@@ -1,9 +1,9 @@
-import Home from './components/pages/Home.jsx';
+import Allroutes from './components/pages/Allroutes.jsx';
 
 const App = () => {
   return (
     <div>
-      <Home />
+      <Allroutes />
     </div>
   )
 }

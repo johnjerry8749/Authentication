@@ -1,5 +1,5 @@
 import Navbar from "../common/Navbar.jsx";
-// import Footer from "../common/Footer.jsx";
+import Footer from "../common/Footer.jsx";
 import Home from "../pages/Home.jsx";
 
 const Allroutes = () => {
@@ -7,7 +7,7 @@ const Allroutes = () => {
       <div className="">
         <Navbar />
         <Home />
-        {/* <Footer /> */}
+        <Footer />
       </div>          
   )
 }

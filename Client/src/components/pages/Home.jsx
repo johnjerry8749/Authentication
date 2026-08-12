@@ -2,46 +2,77 @@ import hero_image from "../../assets/front/hero_img.png";
 
 const Home = () => {
   return (
-    <div className="bg-white" style={{ width: "100%" }}>
-      <div className="row m-auto border border-dark d-flex justify-content-center align-items-center" style={{ minHeight: "500px", width: "83%" }}>
-        {/* Left Content */}
-        <div className="col-sm-12 col-md-12 col-lg-6 d-flex flex-column align-items-center justify-content-center p-5" style={{ backgroundColor: "#f9f7f4" }}>
-          <p className="mb-3" style={{ fontSize: "14px", fontWeight: "600", color: "#666", letterSpacing: "2px" }}>
-            ─── OUR BESTSELLERS
-          </p>
-          <h1 className="mb-4 " style={{ fontSize: "30px", fontWeight: "500", color: "#1a1a1a", lineHeight: "1.2" }}>
-            Latest Arrivals
-          </h1>
-          <button 
-            style={{
-              width: "fit-content",
-              padding: "12px 40px",
-              backgroundColor: "#1a1a1a",
-              color: "white",
-              border: "none",
-              fontSize: "14px",
-              fontWeight: "600",
-              cursor: "pointer",
-              letterSpacing: "1px",
-              transition: "all 0.3s ease",
-            }}
-            onMouseEnter={(e) => (e.target.style.backgroundColor = "#dc2626")}
-            onMouseLeave={(e) => (e.target.style.backgroundColor = "#1a1a1a")}
-          >
-            SHOP NOW ──
-          </button>
-        </div>
+    <>
+      <style>{`
+        @import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600;700&display=swap');
 
-    <div className="col-sm-12 col-md-12 col-lg-6 d-flex justify-content-center align-items-center" style={{ backgroundColor: "#deb1a07b" }}>
-          <img
-            src={hero_image}
-            alt="Hero Image"
-            className="img-fluid"
-            style={{ height: "auto", width: "100%", objectFit: "cover" }}
-          />
+        @media (max-width: 768px) {
+          .hero-label {
+            font-size: 13px !important;
+          }
+          .hero-title {
+            font-size: 40px !important;
+          }
+          .hero-button {
+            font-size: 13px !important;
+          }
+        }
+
+        @media (min-width: 769px) and (max-width: 1024px) {
+          .hero-label {
+            font-size: 14px !important;
+          }
+          .hero-title {
+            font-size: 56px !important;
+          }
+          .hero-button {
+            font-size: 14px !important;
+          }
+        }
+
+        @media (min-width: 1025px) {
+          .hero-label {
+            font-size: 14px !important;
+          }
+          .hero-title {
+            font-size: 80px !important;
+          }
+          .hero-button {
+            font-size: 15px !important;
+          }
+        }
+      `}</style>
+
+      <div className="bg-white" style={{ width: "100%" }}>
+        <div className="row m-auto border border-dark d-flex justify-content-center align-items-center" style={{ width: "81%" }}>
+          {/* Left Content */}
+          <div className="col-sm-12 col-md-12 col-lg-6 d-flex flex-column justify-content-center p-5" style={{ backgroundColor: "#f9f7f4" }}>
+            <p className="mb-4 hero-label" style={{ fontWeight: "600",  letterSpacing: "2px", textTransform: "uppercase" }}>
+              ── OUR BESTSELLERS
+            </p>
+            <h1 className="mb-4 hero-title" style={{ fontWeight: "400", color: "#1a1a1a", lineHeight: "1.1", fontFamily: "'Lora', serif" }}>
+              Latest Arrivals
+            </h1>
+            <div style={{ display: "flex", alignItems: "center", gap: "15px" }}>
+              <div style={{ width: "40px", height: "1px", backgroundColor: "#1a1a1a" }}></div>
+              <p className="hero-button mb-0" style={{ fontWeight: "600", color: "#1a1a1a", letterSpacing: "2px", textTransform: "uppercase" }}>
+                Shop now
+              </p>
+              <div style={{ width: "40px", height: "1px", backgroundColor: "#1a1a1a" }}></div>
+            </div>
+          </div>
+
+          <div className="col-sm-12 col-md-12 col-lg-6 d-flex justify-content-center align-items-center" style={{ backgroundColor: "#deb1a07b" }}>
+            <img
+              src={hero_image}
+              alt="Hero Image"
+              className="img-fluid"
+              style={{ height: "auto", width: "100%", objectFit: "cover" }}
+            />
+          </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 

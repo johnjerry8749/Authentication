@@ -1,8 +1,16 @@
+import Navbar from "../common/Navbar";
+import Footer from "../common/Footer";
+
 const Home = () => {
   return (
-    <div>
-      
-    </div>
+    <>
+      <Navbar />
+      <div className="border border-danger ">
+
+
+      </div>
+      <Footer />
+    </>
   )
 }
 

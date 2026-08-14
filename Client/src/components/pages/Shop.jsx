@@ -1,4 +1,4 @@
-import hero_image from "../../assets/front/hero_img.png";
+import Productimg from "../../assets/front/p_img50.png";
 
 const Shop = () => {
 
@@ -7,7 +7,6 @@ const Shop = () => {
   {
     name: "Shirt black color",
     price: "$50",
-    image: "/images/white-shirt.jpg",
   },
   {
     name: "Shirt white color",
@@ -17,6 +16,36 @@ const Shop = () => {
   {
     name: "Blue Jeans",
     price: "$70",
+  },
+  {
+    name: "Shirt black color",
+    price: "$50",
+  },
+  {
+    name: "Shirt white color",
+    price: "$45",
+
+  },
+  {
+    name: "Blue Jeans",
+    price: "$70",
+  },
+  {
+    name: "Shirt black color",
+    price: "$50",
+  },
+  {
+    name: "Shirt white color",
+    price: "$45",
+
+  },
+  {
+    name: "Blue Jeans",
+    price: "$70",
+  },
+  {
+    name: "Shirt black color",
+    price: "$50",
   },
 ];
 
@@ -30,11 +59,17 @@ const Shop = () => {
           .shop-title {
             font-size: 36px !important;
           }
+          .product-item {
+            flex: 0 0 calc(50% - 12px) !important;
+          }
         }
 
         @media (min-width: 769px) and (max-width: 1024px) {
           .shop-title {
             font-size: 38px !important;
+          }
+          .product-item {
+            flex: 0 0 calc(25% - 12px) !important;
           }
         }
 
@@ -42,6 +77,27 @@ const Shop = () => {
           .shop-title {
             font-size: 44px !important;
           }
+          .product-item {
+            flex: 0 0 calc(20% - 12px) !important;
+          }
+        }
+
+        .products-grid {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 15px;
+          justify-content: center;
+        }
+
+        .product-item {
+          background: white;
+          border-radius: 4px;
+          overflow: hidden;
+          transition: all 0.3s ease;
+        }
+
+        .product-item:hover {
+          box-shadow: 0 2px 8px rgba(0,0,0,0.1);
         }
       `}</style>
 
@@ -65,10 +121,25 @@ const Shop = () => {
           </div>
         </div>
 
-        <div className="row justify-content-center border border-danger">
-          {/* Product cards will go here */}
-
-
+<div className="products-grid">
+          {products.map((product, index) => (
+            <div className="product-item" key={product.id || index}>
+              <img
+                src={Productimg}
+                alt={product.name}
+                className="img-fluid w-100"
+                style={{ display: "block" }}
+              />
+              <div style={{ padding: "15px" }}>
+                <h3 style={{ fontSize: "14px", fontWeight: "600", color: "#1a1a1a", marginBottom: "8px" }}>
+                  {product.name}
+                </h3>
+                <p style={{ fontSize: "15px", fontWeight: "700", color: "#dc2626", marginBottom: "0" }}>
+                  {product.price}
+                </p>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
     </>

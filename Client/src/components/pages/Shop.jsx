@@ -1,7 +1,7 @@
 import Productimg from "../../assets/front/p_img50.png";
 
 const Shop = () => {
-  const products = [
+  const product = [
     {
       name: "Shirt black color",
       price: "$50",
@@ -42,6 +42,15 @@ const Shop = () => {
       name: "Shirt black color",
       price: "$50",
     },
+    {
+      name: "Blue Jeans",
+      price: "$70",
+    },
+    {
+      name: "Shirt black color",
+      price: "$50",
+    },
+    
   ];
 
   return (
@@ -123,9 +132,44 @@ const Shop = () => {
           </div>
         </div>
 
-         <div className="border border-danger p-2 mx-4">
+    <div className="container-fluid border border-danger p-3 p-md-4">
+  <div
+    className="row g-3 g-md-4 mx-auto border border-danger"
+    style={{ width: "90%" }}
+  >
+    {product.map((products, index) => (
+      <div
+        className="col-6 col-md-4 col-lg-3"
+        key={products.id || index}
+      >
+        <div className="card h-100 shadow-sm">
+          <div className="card-body text-center">
 
-         </div>
+            <img
+              src={Productimg}
+              alt={products.name}
+              className="img-fluid"
+              style={{
+                height: "260px",
+                width: "100%",
+                objectFit: "cover",
+              }}
+            />
+
+            <p className="card-text mt-3 mb-1 fw-semibold">
+              {products.name}
+            </p>
+
+            <p className="card-text text-success fw-bold">
+              {products.price}
+            </p>
+
+          </div>
+        </div>
+      </div>
+    ))}
+  </div>
+</div>
       </div>
     </>
   );

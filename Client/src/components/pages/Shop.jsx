@@ -1,13 +1,12 @@
 import Productimg from "../../assets/front/p_img50.png";
-import { Navigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const Shop = () => {
-  const navigate = Navigate()
+  const navigate = useNavigate();
 
-  const productdetials = {
-     navigate("/productsDetails");
-  }
-
+  const productDetails = (id) => {
+    navigate(`/productdetails/${id}`);
+  };
 
   const product = [
     {
@@ -58,7 +57,6 @@ const Shop = () => {
       name: "Shirt black color",
       price: "$50",
     },
-    
   ];
 
   return (
@@ -140,44 +138,87 @@ const Shop = () => {
           </div>
         </div>
 
-    <div className="container-fluid border border-danger p-3 p-md-4">
-  <div
-    className="row g-3 g-md-4 mx-auto border border-danger"
-    style={{ width: "80%" }}
-  >
-    {product.map((products, index) => (
-      <div
-        className="col-6 col-md-4 col-lg-3"
-        key={products.id || index}
-      >
-        <div className="card h-100 shadow-sm" onClick={productdetials} style={{ cursor: "pointer" }}>
-          <div className="card-body text-center">
+        <div className="container-fluid  p-3 p-md-4">
+          <div className="row g-3 g-md-4 mx-auto " style={{ width: "90%" }}>
+            {product.map((products, index) => (
+              <div
+                className="col-6 col-md-4 col-lg-3"
+                key={products.id || index}
+              >
+                <div
+                  className="card h-100 shadow-sm"
+                  onClick={productDetails}
+                  style={{ cursor: "pointer" }}
+                >
+                  <div className="card-body text-center">
+                    <img
+                      src={Productimg}
+                      alt={products.name}
+                      className="img-fluid"
+                      style={{
+                        height: "260px",
+                        width: "100%",
+                        objectFit: "cover",
+                      }}
+                    />
 
-            <img
-              src={Productimg}
-              alt={products.name}
-              className="img-fluid"
-              style={{
-                height: "260px",
-                width: "100%",
-                objectFit: "cover",
-              }}
-            />
+                    <p className="card-text mt-3 mb-1 fw-semibold">
+                      {products.name}
+                    </p>
 
-            <p className="card-text mt-3 mb-1 fw-semibold">
-              {products.name}
-            </p>
-
-            <p className="card-text text-success fw-bold">
-              {products.price}
-            </p>
-
+                    <p className="card-text text-success fw-bold">
+                      {products.price}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
-      </div>
-    ))}
-  </div>
-</div>
+                 
+                 {/* //BEST SELLER SECTION */}
+
+        <div className="row">
+          <div className="col-12">
+            <div className="d-flex flex-column justify-content-center align-items-center mb-5">
+              {/* Title with decorative lines */}
+              <div className="d-flex justify-content-center align-items-center gap-4 mb-4">
+                <h1
+                  className="shop-title mb-0"
+                  style={{
+                    fontFamily: "'Lora', serif",
+                    fontWeight: "400",
+                    color: "#1a1a1a",
+                    whiteSpace: "nowrap",
+                  }}
+                >
+                  <span style={{ color: "#666" }}>BEST</span> SELLERS
+                </h1>
+                <div
+                  style={{
+                    width: "50px",
+                    height: "2px",
+                    backgroundColor: "#1a1a1a",
+                  }}
+                ></div>
+              </div>
+
+              {/* Description text */}
+              <p
+                style={{
+                  maxWidth: "700px",
+                  textAlign: "center",
+                  color: "#666",
+                  fontSize: "15px",
+                  lineHeight: "1.6",
+                }}
+              >
+                Lorem Ipsum is simply dummy text of the printing and typesetting
+                industry. Lorem Ipsum has been the.
+              </p>
+            </div>
+          </div>
+        </div>
       </div>
     </>
   );

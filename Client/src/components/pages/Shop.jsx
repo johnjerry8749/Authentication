@@ -1,5 +1,26 @@
+import hero_image from "../../assets/front/hero_img.png";
 
 const Shop = () => {
+
+
+  const products = [
+  {
+    name: "Shirt black color",
+    price: "$50",
+    image: "/images/white-shirt.jpg",
+  },
+  {
+    name: "Shirt white color",
+    price: "$45",
+
+  },
+  {
+    name: "Blue Jeans",
+    price: "$70",
+  },
+];
+
+
   return (
     <>
       <style>{`
@@ -44,8 +65,10 @@ const Shop = () => {
           </div>
         </div>
 
-        <div className="row justify-content-center">
+        <div className="row justify-content-center border border-danger">
           {/* Product cards will go here */}
+
+
         </div>
       </div>
     </>

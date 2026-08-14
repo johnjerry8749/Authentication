@@ -44,25 +44,69 @@ const Home = () => {
       `}</style>
 
       <div className="bg-white" style={{ width: "100%" }}>
-        <div className="row m-auto border border-dark d-flex justify-content-center align-items-center" style={{ width: "81%" }}>
+        <div
+          className="row m-auto border border-dark d-flex justify-content-center align-items-center"
+          style={{ width: "81%" }}
+        >
           {/* Left Content */}
-          <div className="col-sm-12 col-md-12 bg-white col-lg-6 d-flex flex-column justify-content-center p-5" style={{ backgroundColor: "#f9f7f4" }}>
-            <p className="mb-4 hero-label" style={{ fontWeight: "600",  letterSpacing: "2px", textTransform: "uppercase" }}>
+          <div
+            className="col-sm-12 col-md-12 bg-white col-lg-6 d-flex flex-column justify-content-center p-5"
+            style={{ backgroundColor: "#f9f7f4" }}
+          >
+            <p
+              className="mb-4 hero-label"
+              style={{
+                fontWeight: "600",
+                letterSpacing: "2px",
+                textTransform: "uppercase",
+              }}
+            >
               ── OUR BESTSELLERS
             </p>
-            <h1 className="mb-4 hero-title" style={{ fontWeight: "400", color: "#1a1a1a", lineHeight: "1.1", fontFamily: "'Lora', serif" }}>
+            <h1
+              className="mb-4 hero-title"
+              style={{
+                fontWeight: "400",
+                color: "#1a1a1a",
+                lineHeight: "1.1",
+                fontFamily: "'Lora', serif",
+              }}
+            >
               Latest Arrivals
             </h1>
             <div style={{ display: "flex", alignItems: "center", gap: "15px" }}>
-              <div style={{ width: "40px", height: "1px", backgroundColor: "#1a1a1a" }}></div>
-              <p className="hero-button mb-0" style={{ fontWeight: "600", color: "#1a1a1a", letterSpacing: "2px", textTransform: "uppercase" }}>
+              <div
+                style={{
+                  width: "40px",
+                  height: "1px",
+                  backgroundColor: "#1a1a1a",
+                }}
+              ></div>
+              <p
+                className="hero-button mb-0"
+                style={{
+                  fontWeight: "600",
+                  color: "#1a1a1a",
+                  letterSpacing: "2px",
+                  textTransform: "uppercase",
+                }}
+              >
                 Shop now
               </p>
-              <div style={{ width: "40px", height: "1px", backgroundColor: "#1a1a1a" }}></div>
+              <div
+                style={{
+                  width: "40px",
+                  height: "1px",
+                  backgroundColor: "#1a1a1a",
+                }}
+              ></div>
             </div>
           </div>
 
-          <div className="col-sm-12 col-md-12 col-lg-6 d-flex justify-content-center align-items-center" style={{ backgroundColor: "#deb1a07b" }}>
+          <div
+            className="col-sm-12 col-md-12 col-lg-6 d-flex justify-content-center align-items-center"
+            style={{ backgroundColor: "#deb1a07b" }}
+          >
             <img
               src={hero_image}
               alt="Hero Image"

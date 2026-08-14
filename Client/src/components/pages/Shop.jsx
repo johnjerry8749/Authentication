@@ -12,8 +12,7 @@ const Shop = () => {
     navigate(`/productdetails/${id}`);
   };
 
-
-  const Bestsells =[
+  const Bestsells = [
     {
       name: "Shirt black color",
       price: "$50",
@@ -30,8 +29,7 @@ const Shop = () => {
       name: "Shirt black color",
       price: "$50",
     },
-
-  ]
+  ];
 
   const product = [
     {
@@ -200,8 +198,8 @@ const Shop = () => {
             ))}
           </div>
         </div>
-                 
-                 {/* //BEST SELLER SECTION */}
+
+        {/* //BEST SELLER SECTION */}
 
         <div className="row mt-4">
           <div className="col-12">
@@ -245,7 +243,7 @@ const Shop = () => {
           </div>
         </div>
 
-      <div className="container-fluid  p-3 p-md-4">
+        <div className="container-fluid  p-3 p-md-4">
           <div className="row g-3 g-md-4 mx-auto " style={{ width: "90%" }}>
             {Bestsells.map((Bestsell, index) => (
               <div
@@ -284,27 +282,27 @@ const Shop = () => {
         </div>
         <div className="row  mt-3 p-2 d-flex justify-content-center gap-2 mx-4">
           <div className="col-12 col-md-12 col-lg-3  p-2 ">
-            <img src={exchange} alt="" className="d-block mx-auto"/>
+            <img src={exchange} alt="" className="d-block mx-auto" />
             <h4 className="text-dark text-center">Easy Exchange Policy</h4>
-            <p className="text-muted text-center">We offer hassle free exchange policy</p>
+            <p className="text-muted text-center">
+              We offer hassle free exchange policy
+            </p>
           </div>
-           <div className="col-12 col-md-12 col-lg-4 p-2">
-            <img src={quality} alt="" className="d-block mx-auto"/>
+          <div className="col-12 col-md-12 col-lg-4 p-2">
+            <img src={quality} alt="" className="d-block mx-auto" />
             <h4 className="text-dark text-center">7 Days Return Policy</h4>
-            <p className="text-muted text-center">We provide 7 days free return policy</p>
-           </div>
-            <div className="col-12 col-md-12 col-lg-3 p-2">
-              <img src={support} alt="" className="d-block mx-auto"/>
+            <p className="text-muted text-center">
+              We provide 7 days free return policy
+            </p>
+          </div>
+          <div className="col-12 col-md-12 col-lg-3 p-2">
+            <img src={support} alt="" className="d-block mx-auto" />
             <h4 className="text-dark text-center">Best customer support</h4>
-            <p className="text-muted text-center">we provide 24/7 customer support</p>
-            </div>
-
+            <p className="text-muted text-center">
+              we provide 24/7 customer support
+            </p>
+          </div>
         </div>
-
-
-
-
-
       </div>
     </>
   );

@@ -1,6 +1,8 @@
 import Productimg from "../../assets/front/p_img50.png";
 import Productimg2 from "../../assets/front/p_img49.png";
 import exchange from "../../assets/front/exchange_icon.png";
+import support from "../../assets/front/support_img.png";
+import quality from "../../assets/front/quality_icon.png";
 import { useNavigate } from "react-router-dom";
 
 const Shop = () => {
@@ -280,19 +282,19 @@ const Shop = () => {
             ))}
           </div>
         </div>
-        <div className="row border border-danger mt-3 p-2 d-flex justify-content-center gap-2 mx-4">
-          <div className="col-12 col-md-12 col-lg-3 border border-dark p-2 ">
+        <div className="row  mt-3 p-2 d-flex justify-content-center gap-2 mx-4">
+          <div className="col-12 col-md-12 col-lg-3  p-2 ">
             <img src={exchange} alt="" className="d-block mx-auto"/>
             <h4 className="text-dark text-center">Easy Exchange Policy</h4>
             <p className="text-muted text-center">We offer hassle free exchange policy</p>
           </div>
-           <div className="col-12 col-md-12 col-lg-4 border border-dark p-2">
-            <img src={exchange} alt="" className="d-block mx-auto"/>
+           <div className="col-12 col-md-12 col-lg-4 p-2">
+            <img src={quality} alt="" className="d-block mx-auto"/>
             <h4 className="text-dark text-center">7 Days Return Policy</h4>
             <p className="text-muted text-center">We provide 7 days free return policy</p>
            </div>
-            <div className="col-12 col-md-12 col-lg-3 border border-dark p-2">
-              <img src={exchange} alt="" className="d-block mx-auto"/>
+            <div className="col-12 col-md-12 col-lg-3 p-2">
+              <img src={support} alt="" className="d-block mx-auto"/>
             <h4 className="text-dark text-center">Best customer support</h4>
             <p className="text-muted text-center">we provide 24/7 customer support</p>
             </div>

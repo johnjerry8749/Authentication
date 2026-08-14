@@ -1,6 +1,14 @@
 import Productimg from "../../assets/front/p_img50.png";
+import { Navigate } from "react-router-dom";
 
 const Shop = () => {
+  const navigate = Navigate()
+
+  const productdetials = {
+     navigate("/productsDetails");
+  }
+
+
   const product = [
     {
       name: "Shirt black color",
@@ -142,7 +150,7 @@ const Shop = () => {
         className="col-6 col-md-4 col-lg-3"
         key={products.id || index}
       >
-        <div className="card h-100 shadow-sm">
+        <div className="card h-100 shadow-sm" onClick={productdetials} style={{ cursor: "pointer" }}>
           <div className="card-body text-center">
 
             <img

@@ -135,7 +135,7 @@ const Shop = () => {
     <div className="container-fluid border border-danger p-3 p-md-4">
   <div
     className="row g-3 g-md-4 mx-auto border border-danger"
-    style={{ width: "90%" }}
+    style={{ width: "80%" }}
   >
     {product.map((products, index) => (
       <div

@@ -4,7 +4,7 @@ import Home from "../pages/Home.jsx";
 import Shop from "./Shop.jsx";
 import Newsletter from "./Newsletter.jsx";
 
-const Allroutes = () => {
+const AllHomecomponet = () => {
   return (
     <div className="">
       <Navbar />
@@ -16,4 +16,4 @@ const Allroutes = () => {
   );
 };
 
-export default Allroutes;
+export default AllHomecomponet;

@@ -4,83 +4,225 @@ import Productimg2 from "../../assets/front/p_img49.png";
 
 const ProductDetails = () => {
   return (
-    <div>
+    <div className="bg-white">
       <Navbar />
-      <div className="mx-3">
-        <div className="row p-2 mx-4 d-flex justify-content-center gap-2 align-items-center">
-          {/* Side Photos */}
-          <div className="col-12 col-md-12 col-lg-1 d-flex d-md-flex justify-content-center d-lg-block gap-1 p-2 text-dark ">
-            <div
-              className="col-3 col-md-3 col-lg-12 border border-dark mb-2"
-              style={{ height: "150px", width: "110px" }}
-            >
-              <img
-                src={Productimg2}
-                alt=""
-                style={{ height: "140px", width: "100px" }}
-              />
+
+      <div className="container py-5">
+        <div className="row g-4 justify-content-center">
+          {/* ================= SIDE IMAGES ================= */}
+          <div className="col-12 col-lg-1">
+            <div className="d-flex flex-row flex-lg-column justify-content-center gap-2">
+              <div
+                className="border rounded p-1"
+                style={{ width: "80px", height: "90px" }}
+              >
+                <img
+                  src={Productimg2}
+                  alt="Product"
+                  className="w-100 h-100"
+                  style={{ objectFit: "cover" }}
+                />
+              </div>
+
+              <div
+                className="border rounded p-1"
+                style={{ width: "80px", height: "90px" }}
+              >
+                <img
+                  src={Productimg2}
+                  alt="Product"
+                  className="w-100 h-100"
+                  style={{ objectFit: "cover" }}
+                />
+              </div>
+
+              <div
+                className="border rounded p-1"
+                style={{ width: "80px", height: "90px" }}
+              >
+                <img
+                  src={Productimg2}
+                  alt="Product"
+                  className="w-100 h-100"
+                  style={{ objectFit: "cover" }}
+                />
+              </div>
+
+              <div
+                className="border rounded p-1"
+                style={{ width: "80px", height: "90px" }}
+              >
+                <img
+                  src={Productimg2}
+                  alt="Product"
+                  className="w-100 h-100"
+                  style={{ objectFit: "cover" }}
+                />
+              </div>
             </div>
+          </div>
+
+          {/* ================= MAIN PRODUCT IMAGE ================= */}
+          <div className="col-12 col-md-7 col-lg-5">
             <div
-              className="col-3 col-md-3 col-lg-12 border border-dark mb-2"
-              style={{ height: "150px", width: "110px" }}
+              className="border rounded-3 p-3 bg-light"
+              style={{ height: "550px" }}
             >
               <img
                 src={Productimg2}
-                alt=""
-                style={{ height: "140px", width: "100px" }}
-              />
-            </div>
-            <div
-              className="col-3 col-md-3 col-lg-12 border border-dark mb-2"
-              style={{ height: "150px", width: "110px" }}
-            >
-              <img
-                src={Productimg2}
-                alt=""
-                style={{ height: "140px", width: "100px" }}
-              />
-            </div>
-            <div
-              className="col-3 col-md-3 col-lg-12 border border-dark mb-2"
-              style={{ height: "150px", width: "110px" }}
-            >
-              <img
-                src={Productimg2}
-                alt=""
-                style={{ height: "140px", width: "100px" }}
+                alt="Women Round Neck Cotton Top"
+                className="w-100 h-100"
+                style={{
+                  objectFit: "contain",
+                }}
               />
             </div>
           </div>
-          {/* Big Photo */}
-          <div
-            className="col-12 col-md-12 col-lg-4 border border-danger p-2 text-dark"
-            style={{ height: "550px" }}
-          >
-            {" "}
-            <img
-              src={Productimg2}
-              alt=""
-              style={{ height: "100%", width: "100%" }}
-            />
-          </div>
-          {/* Photo Detials */}
-          <div
-            className="col-12 col-md-12 col-lg-5 border border-danger p-2 text-dark"
-            style={{ height: "650px" }}
-          >
-            <h3 className="fw-muted fs-4 p-2">Women Round Neck Cotton Top</h3>
-            <div className="p-2">
-              *****<span>122</span>
+
+          {/* ================= PRODUCT DETAILS ================= */}
+          <div className="col-12 col-md-5 col-lg-5">
+            <div className="px-lg-3">
+              <h1 className="fs-3 fw-semibold mb-2">
+                Women Round Neck Cotton Top
+              </h1>
+
+              {/* Rating */}
+              <div className="d-flex align-items-center gap-2 mb-3">
+                <span className="text-warning fs-5">★★★★★</span>
+
+                <span className="text-muted">122 Reviews</span>
+              </div>
+
+              {/* Price */}
+              <div className="mb-3">
+                <span className="fs-2 fw-bold">$40.00</span>
+
+                <span className="text-muted text-decoration-line-through ms-3">
+                  $55.00
+                </span>
+
+                <span className="badge bg-danger ms-2">27% OFF</span>
+              </div>
+
+              {/* Description */}
+              <p className="text-muted lh-lg">
+                A lightweight, usually knitted pullover shirt, close-fitting and
+                designed with a round neckline and short sleeves. Perfect for
+                casual everyday wear.
+              </p>
+
+              <hr />
+
+              {/* Size */}
+              <h5 className="fw-semibold mb-3">Select Size</h5>
+
+              <div className="d-flex flex-wrap gap-2 mb-4">
+                <button className="btn btn-outline-dark px-4">S</button>
+
+                <button className="btn btn-dark px-4">M</button>
+
+                <button className="btn btn-outline-dark px-4">L</button>
+
+                <button className="btn btn-outline-dark px-4">XL</button>
+
+                <button className="btn btn-outline-dark px-4">XXL</button>
+              </div>
+
+              {/* Quantity */}
+              <h5 className="fw-semibold mb-3">Quantity</h5>
+
+              <div
+                className="border rounded d-flex align-items-center justify-content-between mb-4"
+                style={{ width: "140px" }}
+              >
+                <button className="btn btn-light fs-5">−</button>
+
+                <span className="fw-semibold">1</span>
+
+                <button className="btn btn-light fs-5">+</button>
+              </div>
+
+              {/* Buttons */}
+              <div className="d-flex gap-2 mb-4">
+                <button className="btn btn-dark flex-grow-1 py-3 fw-semibold">
+                  ADD TO CART
+                </button>
+
+                <button className="btn btn-outline-dark px-4 py-3">♡</button>
+              </div>
+
+              {/* Delivery */}
+              <div className="border rounded-3 p-3">
+                <div className="d-flex gap-3 mb-3">
+                  <h6 className="fw-semibold mb-1">
+                    100% Original product. Cash on delivery is available on this
+                    product. Easy return and exchange policy within 7 days.
+                  </h6>
+
+                  <span className="fs-4">🚚</span>
+
+                  <div>
+                    <h6 className="fw-semibold mb-1">Free Delivery</h6>
+
+                    <small className="text-muted">
+                      Free delivery on orders over $50
+                    </small>
+                  </div>
+                </div>
+
+                <div className="d-flex gap-3">
+                  <span className="fs-4">↩</span>
+
+                  <div>
+                    <h6 className="fw-semibold mb-1">Easy Returns</h6>
+
+                    <small className="text-muted">
+                      30 days easy return policy
+                    </small>
+                  </div>
+                </div>
+              </div>
             </div>
-            <p className="text-muted fs-2">$40</p>
-            <p>
-              A lightweight, usually knitted, pullover shirt, close-fitting and
-              with a round neckline and short sleeves, worn as an undershirt or
-              outer garment.
-            </p>
-            <h3>Select Size</h3>
-            <div className="border border-danger p-2 d-flex justify-content-center align-items-center" style={{width:"50%"}}>
-              <div className="border border-danger" style={{}}></div>
+          </div>
+        </div>
+
+        {/* ================= PRODUCT INFORMATION ================= */}
+        <div className="row mt-5">
+          <div className="col-12">
+            <div className="border rounded-3 p-4">
+              <h4 className="fw-semibold mb-4">Product Information</h4>
+
+              <div className="row">
+                <div className="col-6 col-md-4 mb-3">
+                  <small className="text-muted">Material</small>
+                  <p className="fw-semibold mb-0">100% Cotton</p>
+                </div>
+
+                <div className="col-6 col-md-4 mb-3">
+                  <small className="text-muted">Fit</small>
+                  <p className="fw-semibold mb-0">Regular Fit</p>
+                </div>
+
+                <div className="col-6 col-md-4 mb-3">
+                  <small className="text-muted">Neck Type</small>
+                  <p className="fw-semibold mb-0">Round Neck</p>
+                </div>
+
+                <div className="col-6 col-md-4 mb-3">
+                  <small className="text-muted">Sleeve</small>
+                  <p className="fw-semibold mb-0">Short Sleeve</p>
+                </div>
+
+                <div className="col-6 col-md-4 mb-3">
+                  <small className="text-muted">Style</small>
+                  <p className="fw-semibold mb-0">Casual</p>
+                </div>
+
+                <div className="col-6 col-md-4 mb-3">
+                  <small className="text-muted">Availability</small>
+                  <p className="text-success fw-semibold mb-0">In Stock</p>
+                </div>
+              </div>
             </div>
           </div>
         </div>

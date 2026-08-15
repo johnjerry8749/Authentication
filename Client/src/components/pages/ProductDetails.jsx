@@ -119,7 +119,7 @@ const ProductDetails = () => {
               <div className="d-flex flex-wrap gap-2 mb-4">
                 <button className="btn btn-outline-dark px-4">S</button>
 
-                <button className="btn btn-dark px-4">M</button>
+                <button className="btn btn-outline-dark px-4">M</button>
 
                 <button className="btn btn-outline-dark px-4">L</button>
 
@@ -128,32 +128,18 @@ const ProductDetails = () => {
                 <button className="btn btn-outline-dark px-4">XXL</button>
               </div>
 
-              {/* Quantity */}
-              <h5 className="fw-semibold mb-3">Quantity</h5>
-
-              <div
-                className="border rounded d-flex align-items-center justify-content-between mb-4"
-                style={{ width: "140px" }}
-              >
-                <button className="btn btn-light fs-5">−</button>
-
-                <span className="fw-semibold">1</span>
-
-                <button className="btn btn-light fs-5">+</button>
-              </div>
-
               {/* Buttons */}
               <div className="d-flex gap-2 mb-4">
                 <button className="btn btn-dark flex-grow-1 py-3 fw-semibold">
                   ADD TO CART
                 </button>
 
-                <button className="btn btn-outline-dark px-4 py-3">♡</button>
+
               </div>
 
               {/* Delivery */}
               <div className="border rounded-3 p-3">
-                <div className="d-flex gap-3 mb-3">
+                <div className="d-flex gap-2 mb-3">
                   <h6 className="fw-semibold mb-1">
                     100% Original product. Cash on delivery is available on this
                     product. Easy return and exchange policy within 7 days.

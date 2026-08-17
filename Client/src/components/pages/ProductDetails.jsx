@@ -133,8 +133,6 @@ const ProductDetails = () => {
                 <button className="btn btn-dark flex-grow-1 py-3 fw-semibold">
                   ADD TO CART
                 </button>
-
-
               </div>
 
               {/* Delivery */}
@@ -208,6 +206,34 @@ const ProductDetails = () => {
                   <small className="text-muted">Availability</small>
                   <p className="text-success fw-semibold mb-0">In Stock</p>
                 </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="row mt-5">
+          <div className="col-12">
+            <div className="d-flex flex-column justify-content-center align-items-center mb-5">
+              {/* Title with decorative lines */}
+              <div className="d-flex justify-content-center align-items-center gap-4 mb-4">
+                <h1
+                  className="shop-title mb-0"
+                  style={{
+                    fontFamily: "'Lora', serif",
+                    fontWeight: "400",
+                    color: "#1a1a1a",
+                    whiteSpace: "nowrap",
+                  }}
+                >
+                  <span style={{ color: "#666" }}>RELATED</span> RELATED
+                </h1>
+                <div
+                  style={{
+                    width: "50px",
+                    height: "2px",
+                    backgroundColor: "#1a1a1a",
+                  }}
+                ></div>
               </div>
             </div>
           </div>

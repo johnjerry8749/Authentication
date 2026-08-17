@@ -1,26 +1,16 @@
 import Navbar from "../common/Navbar";
 import Footer from "../common/Footer";
+import '../pages/css/collection.css'
 import { useState } from "react";
+import Productimg2 from "../../assets/front/p_img49.png";
+import { useNavigate } from "react-router-dom";
 
 const Collections = () => {
+    const navigate = useNavigate(); 
+
   const [sortOpen, setSortOpen] = useState(false);
   const [selectedSort, setSelectedSort] = useState("High to Low");
-
-  // FILTER TOGGLE FOR MD / MOBILE
   const [filterOpen, setFilterOpen] = useState(false);
-
-  const togglesort = () => {
-    setSortOpen(!sortOpen);
-  };
-
-  const toggleFilter = () => {
-    setFilterOpen(!filterOpen);
-  };
-
-  const handleSort = (option) => {
-    setSelectedSort(option);
-    setSortOpen(false);
-  };
 
   const sortOptions = [
     "High to Low",
@@ -29,37 +19,105 @@ const Collections = () => {
     "Oldest",
   ];
 
+  const Bestsells = [
+    {
+      id: 1,
+      name: "Shirt black color",
+      price: 50,
+    },
+    {
+      id: 2,
+      name: "Shirt white color",
+      price: 45,
+    },
+    {
+      id: 3,
+      name: "Blue Jeans",
+      price: 70,
+    },
+    {
+      id: 4,
+      name: "Shirt black color",
+      price: 50,
+    },
+    {
+      id: 5,
+      name: "Classic T-Shirt",
+      price: 55,
+    },
+    {
+      id: 6,
+      name: "Slim Fit Jeans",
+      price: 75,
+    },
+    {
+      id: 7,
+      name: "Winter Jacket",
+      price: 95,
+    },
+    {
+      id: 8,
+      name: "White Polo",
+      price: 60,
+    },
+    {
+      id: 9,
+      name: "Casual Shirt",
+      price: 65,
+    },
+    {
+      id: 10,
+      name: "Black Trousers",
+      price: 80,
+    },
+    {
+      id: 11,
+      name: "Denim Jacket",
+      price: 90,
+    },
+    {
+      id: 12,
+      name: "Cotton Shirt",
+      price: 48,
+    },
+  ];
+
+  const toggleSort = () => {
+    setSortOpen((prev) => !prev);
+  };
+
+  const toggleFilter = () => {
+    setFilterOpen((prev) => !prev);
+  };
+
+  const handleSort = (option) => {
+    setSelectedSort(option);
+    setSortOpen(false);
+  };
+
+  const productDetails = (id) => {
+    navigate(`/productdetails/${id}`);
+  };
+  
+
   return (
-    <div>
+    <div className="collections-page">
       <Navbar />
 
-      <div className="container px-3 px-md-4 px-lg-5 py-4">
+      <main className="container px-3 px-md-4 px-lg-5 py-4">
 
         {/* =====================================================
-            MOBILE / TABLET LAYOUT
-            ===================================================== */}
+            MOBILE / TABLET
+        ===================================================== */}
+
         <div className="d-lg-none">
 
           {/* FILTER HEADER */}
           <div
-            className="d-flex align-items-center gap-2 mb-4"
+            className="mobile-filter-header d-flex align-items-center gap-2 mb-4"
             onClick={toggleFilter}
-            style={{
-              cursor: "pointer",
-              userSelect: "none",
-            }}
           >
-            <h2
-              className="mb-0"
-              style={{
-                fontFamily: "'Lora', serif",
-                fontSize: "24px",
-                fontWeight: "400",
-                color: "#111",
-              }}
-            >
-              FILTERS
-            </h2>
+            <h2>FILTERS</h2>
 
             <i
               className={`ti ${
@@ -67,178 +125,145 @@ const Collections = () => {
                   ? "ti-chevron-down"
                   : "ti-chevron-right"
               }`}
-              style={{
-                fontSize: "22px",
-                color: "#777",
-              }}
             ></i>
           </div>
 
+          {/* MOBILE FILTER */}
+          <div
+            className={`mobile-filter-wrapper ${
+              filterOpen ? "filter-visible" : "filter-hidden"
+            }`}
+          >
+            <div className="filter-box mb-4">
+              <h3>CATEGORIES</h3>
 
-          {/* MOBILE / TABLET FILTER CONTENT */}
-          {filterOpen && (
-            <div className="mobile-filter-wrapper mb-4">
+              <label>
+                <input type="checkbox" />
+                <span>Men</span>
+              </label>
 
-              {/* CATEGORIES */}
-              <div className="filter-box mb-4">
+              <label>
+                <input type="checkbox" />
+                <span>Women</span>
+              </label>
 
-                <h3> CATEGORIES </h3>
-
-                <label>
-                  <input type="checkbox" />
-                  <span>Men</span>
-                </label>
-
-                <label>
-                  <input type="checkbox" />
-                  <span>Women</span>
-                </label>
-
-                <label>
-                  <input type="checkbox" />
-                  <span>kids</span>
-                </label>
-
-              </div>
-
-
-              {/* TYPE */}
-              <div className="filter-box">
-
-                <h3>TYPE</h3>
-
-                <label>
-                  <input type="checkbox" />
-                  <span>Topwear</span>
-                </label>
-
-                <label>
-                  <input type="checkbox" />
-                  <span>Bottomwear</span>
-                </label>
-
-                <label>
-                  <input type="checkbox" />
-                  <span>Winterwear</span>
-                </label>
-
-              </div>
-
+              <label>
+                <input type="checkbox" />
+                <span>Kids</span>
+              </label>
             </div>
-          )}
+
+            <div className="filter-box mb-4">
+              <h3>TYPE</h3>
+
+              <label>
+                <input type="checkbox" />
+                <span>Topwear</span>
+              </label>
+
+              <label>
+                <input type="checkbox" />
+                <span>Bottomwear</span>
+              </label>
+
+              <label>
+                <input type="checkbox" />
+                <span>Winterwear</span>
+              </label>
+            </div>
+          </div>
 
 
-          {/* =====================================================
-              COLLECTION + SORT
-              ===================================================== */}
-          <div className="d-flex align-items-center justify-content-between gap-3">
+          {/* COLLECTION HEADER */}
+          <div className="mobile-collection-header">
 
-            {/* ALL COLLECTIONS */}
-            <div className="d-flex align-items-center gap-3">
-
-              <h1
-                className="mb-0"
-                style={{
-                  fontFamily: "'Lora', serif",
-                  fontSize: "23px",
-                  fontWeight: "400",
-                  color: "#1a1a1a",
-                  whiteSpace: "nowrap",
-                }}
-              >
-                <span style={{ color: "#777" }}>ALL</span>{" "}
-                COLLECTIONS
+            {/* TITLE */}
+            <div className="collection-heading">
+              <h1>
+                <span>ALL</span> COLLECTIONS
               </h1>
 
-              <div
-                style={{
-                  width: "45px",
-                  height: "1px",
-                  backgroundColor: "#1a1a1a",
-                }}
-              ></div>
-
+              <div className="heading-line"></div>
             </div>
 
-
             {/* SORT */}
-            <div
-              className="position-relative"
-              style={{
-                flexShrink: 0,
-              }}
-            >
+            <div className="sort-wrapper">
 
               <div
-                className="border px-3 py-2 d-flex align-items-center gap-2"
-                style={{
-                  minWidth: "220px",
-                  cursor: "pointer",
-                  backgroundColor: "#fff",
-                  borderColor: "#cfd2d6",
-                }}
-                onClick={togglesort}
+                className="sort-button"
+                onClick={toggleSort}
               >
+                <span>Sort by:</span>
 
-                <span
-                  style={{
-                    fontSize: "16px",
-                    whiteSpace: "nowrap",
-                  }}
-                >
-                  Sort by:
-                </span>
-
-                <span
-                  className="fw-semibold"
-                  style={{
-                    fontSize: "16px",
-                    whiteSpace: "nowrap",
-                  }}
-                >
+                <strong>
                   {selectedSort}
-                </span>
+                </strong>
 
                 <i
                   className={`ti ${
                     sortOpen
                       ? "ti-chevron-up"
                       : "ti-chevron-down"
-                  } ms-auto`}
-                  style={{
-                    fontSize: "18px",
-                  }}
+                  }`}
                 ></i>
-
               </div>
 
-
-              {/* SORT OPTIONS */}
               {sortOpen && (
-                <div
-                  className="position-absolute bg-white border shadow-sm mt-2"
-                  style={{
-                    width: "100%",
-                    zIndex: 1000,
-                    right: 0,
-                    overflow: "hidden",
-                  }}
-                >
-
+                <div className="sort-dropdown">
                   {sortOptions.map((option) => (
                     <div
                       key={option}
-                      className="p-2 sort-option"
+                      className={`sort-option ${
+                        selectedSort === option
+                          ? "active-sort"
+                          : ""
+                      }`}
                       onClick={() => handleSort(option)}
                     >
                       {option}
                     </div>
                   ))}
-
                 </div>
               )}
 
             </div>
+          </div>
+
+
+          {/* MOBILE PRODUCT GRID */}
+          <div className="product-grid row g-3 g-md-4 mt-3">
+
+            {Bestsells.map((product) => (
+              <div
+                className="col-6 col-md-4"
+                key={product.id}
+              >
+                <div
+                  className="product-card"
+                  onClick={productDetails}
+                >
+
+                  <div className="product-image-wrapper">
+                    <img
+                      src={Productimg2}
+                      alt={product.name}
+                      className="product-image"
+                    />
+                  </div>
+
+                  <div className="product-info">
+                    <p className="product-name">
+                      {product.name}
+                    </p>
+
+                    <p className="product-price">
+                      ${product.price}
+                    </p>
+                  </div>
+
+                </div>
+              </div>
+            ))}
 
           </div>
 
@@ -246,21 +271,17 @@ const Collections = () => {
 
 
         {/* =====================================================
-            LARGE SCREEN LAYOUT
-            ===================================================== */}
+            LARGE SCREEN
+        ===================================================== */}
+
         <div className="row g-4 d-none d-lg-flex">
 
-          {/* =====================================================
-              FILTER SIDEBAR
-              ===================================================== */}
+          {/* FILTER SIDEBAR */}
           <div className="col-lg-3">
 
-            <div className="large-filter">
+            <aside className="large-filter">
 
-              <h2>
-                FILTERS
-              </h2>
-
+              <h2>FILTERS</h2>
 
               {/* CATEGORIES */}
               <div className="filter-box">
@@ -279,7 +300,7 @@ const Collections = () => {
 
                 <label>
                   <input type="checkbox" />
-                  <span>kids</span>
+                  <span>Kids</span>
                 </label>
 
               </div>
@@ -307,119 +328,64 @@ const Collections = () => {
 
               </div>
 
-            </div>
+            </aside>
 
           </div>
 
 
-          {/* =====================================================
-              COLLECTION
-              ===================================================== */}
+          {/* COLLECTION AREA */}
           <div className="col-lg-9">
 
-            <div
-              className="d-flex align-items-center justify-content-between gap-3 pb-3 border-bottom"
-            >
+            {/* COLLECTION HEADER */}
+            <div className="desktop-collection-header">
 
-              {/* COLLECTION TITLE */}
-              <div className="d-flex align-items-center justify-content-center gap-3 flex-grow-1">
+              <div className="collection-heading desktop-heading">
 
-                <div
-                  style={{
-                    width: "45px",
-                    height: "1px",
-                    backgroundColor: "#1a1a1a",
-                  }}
-                ></div>
-
-                <h1
-                  className="shop-title mb-0 text-center"
-                  style={{
-                    fontFamily: "'Lora', serif",
-                    fontSize: "50px",
-                    fontWeight: "400",
-                    color: "#1a1a1a",
-                    whiteSpace: "nowrap",
-                  }}
-                >
-                  <span style={{ color: "#777" }}>All</span>{" "}
-                  Collections
+                <h1>
+                  <span>All</span> Collections
                 </h1>
 
-                <div
-                  style={{
-                    width: "45px",
-                    height: "1px",
-                    backgroundColor: "#1a1a1a",
-                  }}
-                ></div>
+                <div className="heading-line mt-4"></div>
 
               </div>
 
 
               {/* SORT */}
-              <div
-                className="position-relative"
-                style={{
-                  width: "230px",
-                }}
-              >
+              <div className="sort-wrapper desktop-sort">
 
                 <div
-                  className="border border-dark rounded px-3 py-2 d-flex align-items-center gap-2"
-                  style={{
-                    width: "100%",
-                    cursor: "pointer",
-                    backgroundColor: "#fff",
-                  }}
-                  onClick={togglesort}
+                  className="sort-button"
+                  onClick={toggleSort}
                 >
+                  <span>Sort by:</span>
 
-                  <span
-                    className="text-muted"
-                    style={{
-                      fontSize: "15px",
-                    }}
-                  >
-                    Sort by:
-                  </span>
-
-                  <span
-                    className="fw-semibold text-truncate"
-                    style={{
-                      fontSize: "15px",
-                    }}
-                  >
+                  <strong>
                     {selectedSort}
-                  </span>
+                  </strong>
 
                   <i
                     className={`ti ${
                       sortOpen
                         ? "ti-chevron-up"
                         : "ti-chevron-down"
-                    } fs-5 text-dark ms-auto`}
+                    }`}
                   ></i>
-
                 </div>
 
-
-                {/* SORT OPTIONS */}
                 {sortOpen && (
-                  <div
-                    className="position-absolute bg-white border border-dark rounded shadow-sm mt-2"
-                    style={{
-                      width: "100%",
-                      zIndex: 1000,
-                      overflow: "hidden",
-                    }}
-                  >
+                  <div className="sort-dropdown">
 
                     {sortOptions.map((option) => (
                       <div
                         key={option}
-                        className="p-2 sort-option"
-                        onClick={() => handleSort(option)}
+                        className={`sort-option ${
+                          selectedSort === option
+                            ? "active-sort"
+                            : ""
+                        }`}
+                        onClick={() =>
+                          handleSort(option)
+                        }
                       >
                         {option}
                       </div>
@@ -432,224 +398,53 @@ const Collections = () => {
 
             </div>
 
+
+            {/* DESKTOP PRODUCT GRID */}
+            <div className="row g-4 mt-3">
+
+              {Bestsells.map((product) => (
+                <div
+                  className="col-lg-4 col-xl-4"
+                  key={product.id}
+                >
+                  <div
+                          className="card h-100 shadow-sm"
+                          onClick={productDetails}
+                          style={{ cursor: "pointer" }}
+                        >
+
+                    <div className="product-image-wrapper">
+                      <img
+                        src={Productimg2}
+                        alt={product.name}
+                        className="product-image"
+                      />
+                    </div>
+
+                    <div className="product-info">
+                      <p className="product-name">
+                        {product.name}
+                      </p>
+
+                      <p className="product-price">
+                        ${product.price}
+                      </p>
+                    </div>
+
+                  </div>
+                </div>
+              ))}
+
+            </div>
+
           </div>
 
         </div>
 
-      </div>
+      </main>
 
 
-      {/* =====================================================
-          CSS
-          ===================================================== */}
-      <style>
-        {`
-
-          /* ============================
-             FILTER SIDEBAR
-             ============================ */
-
-          .large-filter {
-            padding-top: 55px;
-          }
-
-          .large-filter h2 {
-            font-family: 'Lora', serif;
-            font-size: 30px;
-            font-weight: 400;
-            color: #111;
-            margin-bottom: 38px;
-          }
-
-
-          /* ============================
-             FILTER BOX
-             ============================ */
-
-          .filter-box {
-            border: 1px solid #cfd2d6;
-            padding: 22px 30px;
-            background: #fff;
-          }
-
-          .filter-box + .filter-box {
-            margin-top: 30px;
-          }
-
-          .filter-box h3 {
-            font-family: Arial, sans-serif;
-            font-size: 20px;
-            font-weight: 500;
-            color: #111;
-            margin: 0 0 24px 0;
-          }
-
-
-          /* ============================
-             CHECKBOX LABEL
-             ============================ */
-
-          .filter-box label {
-            display: flex;
-            align-items: center;
-            gap: 13px;
-            margin-bottom: 19px;
-            cursor: pointer;
-          }
-
-          .filter-box label:last-child {
-            margin-bottom: 0;
-          }
-
-
-          /* ============================
-             CHECKBOX
-             ============================ */
-
-          .filter-box input[type="checkbox"] {
-            appearance: none;
-            -webkit-appearance: none;
-
-            width: 18px;
-            height: 18px;
-
-            border: 1.5px solid #777;
-            border-radius: 3px;
-
-            background: #fff;
-
-            cursor: pointer;
-
-            position: relative;
-
-            flex-shrink: 0;
-          }
-
-          .filter-box input[type="checkbox"]:checked {
-            background: #111;
-            border-color: #111;
-          }
-
-          .filter-box input[type="checkbox"]:checked::after {
-            content: "✓";
-
-            position: absolute;
-
-            color: #fff;
-
-            font-size: 13px;
-
-            left: 3px;
-            top: -1px;
-          }
-
-
-          /* ============================
-             FILTER TEXT
-             ============================ */
-
-          .filter-box label span {
-            font-size: 20px;
-            font-weight: 400;
-            color: #243b63;
-          }
-
-
-          /* ============================
-             MOBILE / TABLET FILTER
-             ============================ */
-
-          .mobile-filter-wrapper {
-            animation: filterSlide 0.25s ease;
-          }
-
-          @keyframes filterSlide {
-            from {
-              opacity: 0;
-              transform: translateY(-8px);
-            }
-
-            to {
-              opacity: 1;
-              transform: translateY(0);
-            }
-          }
-
-
-          /* ============================
-             SORT
-             ============================ */
-
-          .sort-option {
-            cursor: pointer;
-            transition: all 0.2s ease;
-            font-size: 15px;
-          }
-
-          .sort-option:hover {
-            background-color: #000;
-            color: #fff;
-          }
-
-
-          /* ============================
-             TABLET
-             ============================ */
-
-          @media (min-width: 768px) and (max-width: 991px) {
-
-            .mobile-filter-wrapper {
-              max-width: 500px;
-            }
-
-            .mobile-filter-wrapper .filter-box {
-              padding: 25px 30px;
-            }
-
-          }
-
-
-          /* ============================
-             MOBILE
-             ============================ */
-
-          @media (max-width: 767px) {
-
-            .sort-option {
-              font-size: 14px;
-            }
-
-            .filter-box {
-              padding: 20px;
-            }
-
-            .filter-box h3 {
-              font-size: 18px;
-            }
-
-            .filter-box label span {
-              font-size: 17px;
-            }
-
-          }
-
-
-          @media (max-width: 575px) {
-
-            .container-fluid {
-              padding-left: 12px !important;
-              padding-right: 12px !important;
-            }
-
-            .sort-option {
-              padding: 10px !important;
-            }
-
-          }
-
-        `}
-      </style>
-
+    
 
       <Footer />
     </div>

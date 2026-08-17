@@ -17,7 +17,7 @@ const Collections = () => {
                   className="shop-title mb-0 text-center"
                   style={{
                     fontFamily: "'Lora', serif",
-                    fontSize: "30px",
+                    fontSize: "50px",
                     fontWeight: "400",
                     color: "#1a1a1a",
                     whiteSpace: "nowrap",
@@ -37,22 +37,22 @@ const Collections = () => {
 
               {/* Sort */}
               <div
-                className="border rounded px-3 py-2 d-flex align-items-center gap-2"
+                className="border border-dark rounded px-3 py-2 d-flex align-items-center gap-2"
                 style={{
                   minWidth: "180px",
                   cursor: "pointer",
                   backgroundColor: "#fff",
                 }}
               >
-                <span className="text-muted" style={{ fontSize: "14px" }}>
+                <span className="text-muted" style={{ fontSize: "20px" }}>
                   Sort by:
                 </span>
 
-                <span className="fw-semibold" style={{ fontSize: "14px" }}>
+                <span className="fw-semibold" style={{ fontSize: "19px" }}>
                   High to Low
                 </span>
 
-                <span className="ms-auto">▾</span>
+                <i className="bi bi-chevron-down ms-auto fs-5"></i>
               </div>
             </div>
           </div>

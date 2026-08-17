@@ -44,13 +44,13 @@ const Navbar = () => {
                 <Link to="/" className="text-decoration-none text-dark">
                   Home
                 </Link>
-                <Link to="/" className="text-decoration-none text-dark">
+                <Link to="/Collections" className="text-decoration-none text-dark">
                   Collection
                 </Link>
-                <Link to="/" className="text-decoration-none text-dark">
+                <Link to="/About" className="text-decoration-none text-dark">
                   About
                 </Link>
-                <Link to="/" className="text-decoration-none text-dark">
+                <Link to="/Contact" className="text-decoration-none text-dark">
                   Contact
                 </Link>
               </div>

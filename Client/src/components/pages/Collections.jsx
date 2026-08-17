@@ -1,12 +1,22 @@
 import Navbar from "../common/Navbar";
 import Footer from "../common/Footer";
+import { useState } from "react";
 
 const Collections = () => {
+  const [sortOpen, setSortOpen] = useState(false);
+
+  const togglesort = () => {
+    setSortOpen(!sortOpen);
+  };
+
+  const handleSort = () => {
+
+  }
   return (
     <div>
       <Navbar />
       <div className="p-2 mx-5">
-        <div className="col-12  border border-danger gap-2 d-flex justify-content-center mt-3 p-2">
+        <div className="col-12 gap-2 d-flex justify-content-center mt-3 p-2">
           <div className="col-2 border border-dark p-2"></div>
 
           <div className="col-9 p-2">
@@ -26,7 +36,8 @@ const Collections = () => {
                   <span style={{ color: "#777" }}>All</span> Collections
                 </h1>
 
-                <div className="mt-2"
+                <div
+                  className="mt-2"
                   style={{
                     width: "45px",
                     height: "1px",
@@ -35,24 +46,68 @@ const Collections = () => {
                 ></div>
               </div>
 
-              {/* Sort */}
-              <div
-                className="border border-dark rounded px-3 py-2 d-flex align-items-center gap-2"
-                style={{
-                  minWidth: "180px",
-                  cursor: "pointer",
-                  backgroundColor: "#fff",
-                }}
-              >
-                <span className="text-muted" style={{ fontSize: "20px" }}>
-                  Sort by:
-                </span>
+              {/* Sort Section */}
+              <div className="col-3 position-relative">
+                {/* Sort Button */}
+                <div
+                  className="border border-dark rounded px-3 py-2 d-flex align-items-center gap-2"
+                  style={{
+                    minWidth: "180px",
+                    cursor: "pointer",
+                    backgroundColor: "#fff",
+                  }}
+                  onClick={togglesort}
+                >
+                  <span className="text-muted" style={{ fontSize: "20px" }}>
+                    Sort by:
+                  </span>
 
-                <span className="fw-semibold" style={{ fontSize: "19px" }}>
-                  High to Low
-                </span>
+                  <span className="fw-semibold" style={{ fontSize: "19px" }}>
+                    High to Low
+                  </span>
 
-                <i className="ti ti-chevron-down"></i>
+                  <i className="ti ti-chevron-down fs-5 text-dark ms-auto"></i>
+                </div>
+
+                {/* Toggle Options */}
+                {sortOpen && (
+                  <div
+                    className="position-absolute bg-white border border-dark rounded shadow-sm mt-2"
+                    style={{
+                      width: "100%",
+                      zIndex: 1000,
+                    }}
+                  >
+                    <div className="p-2 sort-option" onClick={handleSort}>
+                      High to Low
+                    </div>
+
+                    <div className="p-2 sort-option" onClick={handleSort}>
+                      Low to High
+                    </div>
+
+                    <div className="p-2 sort-option" onClick={handleSort}>
+                      Newest
+                    </div>
+
+                    <div className="p-2 sort-option" onClick={handleSort}>
+                      Oldest
+                    </div>
+                  </div>
+                )}
+                <style>
+                  {`
+      .sort-option {
+        cursor: pointer;
+        transition: 0.3s;
+      }
+
+      .sort-option:hover {
+        background-color: black;
+        color: white;
+      }
+    `}
+                </style>
               </div>
             </div>
           </div>

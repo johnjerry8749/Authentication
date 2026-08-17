@@ -52,7 +52,7 @@ const Collections = () => {
                   High to Low
                 </span>
 
-                <i className="bi bi-chevron-down ms-auto fs-5"></i>
+                <i className="ti ti-chevron-down"></i>
               </div>
             </div>
           </div>

@@ -1,32 +1,32 @@
 import Footer from "../common/Footer";
 import Navbar from "../common/Navbar";
+import { useCart } from "../context/CartContext";
 import Productimg2 from "../../assets/front/p_img49.png";
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 
 const ProductDetails = () => {
-  const navigate = useNavigate();
+ const { addToCart } = useCart();
 
-  const productDetails = (id) => {
-    navigate(`/productdetails/${id}`);
-  };
-  const addtoacart = (id) => {
-    navigate(`/Cart/${id}`);
-  };
+
 
   const Bestsells = [
     {
+      id:"1",
       name: "Shirt black color",
       price: "$50",
     },
     {
+      id:"2",
       name: "Shirt white color",
       price: "$45",
     },
     {
+      id:"3",
       name: "Blue Jeans",
       price: "$70",
     },
     {
+      id:"4",
       name: "Shirt black color",
       price: "$50",
     },
@@ -159,7 +159,7 @@ const ProductDetails = () => {
 
               {/* Buttons */}
               <div className="d-flex gap-2 mb-4">
-                <button className="btn btn-dark flex-grow-1 py-3 fw-semibold" onClick={addtoacart}>
+                <button className="btn btn-dark flex-grow-1 py-3 fw-semibold" onClick={addToCart}>
                   ADD TO CART
                 </button>
               </div>
@@ -276,7 +276,6 @@ const ProductDetails = () => {
               >
                 <div
                   className="card h-100 shadow-sm"
-                  onClick={productDetails}
                   style={{ cursor: "pointer" }}
                 >
                   <div className="card-body text-center">

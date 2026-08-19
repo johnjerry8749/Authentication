@@ -1,19 +1,105 @@
-import {createContext, useContext, useState} from "react";
+import { createContext, useContext, useState } from "react";
 
-const cartcontect = createContext()
+const CartContext = createContext();
 
-export const CartProvider = ({}) => {
-const [cartItems, setCartItems] = useState([]);
-} 
+export const CartProvider = ({ children }) => {
+  const [cartItems, setCartItems] = useState([]);
 
-//ADD TO CART 
+  // ADD PRODUCT
+  const addToCart = (product) => {
+    setCartItems((currentItems) => {
+      const existingProduct = currentItems.find(
+        (item) => item.id === product.id
+      );
 
-const CartContext = () => {
+      if (existingProduct) {
+        return currentItems.map((item) =>
+          item.id === product.id
+            ? {
+                ...item,
+                quantity: item.quantity + 1,
+              }
+            : item
+        );
+      }
+
+      return [
+        ...currentItems,
+        {
+          ...product,
+          quantity: 1,
+        },
+      ];
+    });
+  };
+
+  // REMOVE PRODUCT
+  const removeFromCart = (id) => {
+    setCartItems((currentItems) =>
+      currentItems.filter((item) => item.id !== id)
+    );
+  };
+
+  // INCREASE QUANTITY
+  const increaseQuantity = (id) => {
+    setCartItems((currentItems) =>
+      currentItems.map((item) =>
+        item.id === id
+          ? {
+              ...item,
+              quantity: item.quantity + 1,
+            }
+          : item
+      )
+    );
+  };
+
+  // DECREASE QUANTITY
+  const decreaseQuantity = (id) => {
+    setCartItems((currentItems) =>
+      currentItems
+        .map((item) =>
+          item.id === id
+            ? {
+                ...item,
+                quantity: item.quantity - 1,
+              }
+            : item
+        )
+        .filter((item) => item.quantity > 0)
+    );
+  };
+
+  // TOTAL NUMBER OF PRODUCTS
+  const cartCount = cartItems.reduce(
+    (total, item) => total + item.quantity,
+    0
+  );
+
+  // SUBTOTAL
+  const totalPrice = cartItems.reduce(
+    (total, item) =>
+      total + Number(item.price) * item.quantity,
+    0
+  );
+
   return (
-    <div c>
-      
-    </div>
-  )
-}
+    <CartContext.Provider
+      value={{
+        cartItems,
+        addToCart,
+        removeFromCart,
+        increaseQuantity,
+        decreaseQuantity,
+        cartCount,
+        totalPrice,
+      }}
+    >
+      {children}
+    </CartContext.Provider>
+  );
+};
 
-export default CartContext
+export const useCart = () => {
+  return useContext(CartContext);
+}

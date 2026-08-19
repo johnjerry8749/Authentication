@@ -14,18 +14,22 @@ const Shop = () => {
 
   const Bestsells = [
     {
+      id:"1",
       name: "Shirt black color",
       price: "$50",
     },
     {
+      id:"2",
       name: "Shirt white color",
       price: "$45",
     },
     {
+      id:"3",
       name: "Blue Jeans",
       price: "$70",
     },
     {
+      id:"3",
       name: "Shirt black color",
       price: "$50",
     },
@@ -33,50 +37,62 @@ const Shop = () => {
 
   const product = [
     {
+      id:"1",
       name: "Shirt black color",
       price: "$50",
     },
     {
+      id:"2",
       name: "Shirt white color",
       price: "$45",
     },
     {
+      id:"3",
       name: "Blue Jeans",
       price: "$70",
     },
     {
+      id:"4",
       name: "Shirt black color",
       price: "$50",
     },
     {
+      id:"5",
       name: "Shirt white color",
       price: "$45",
     },
     {
+      id:"5",
       name: "Blue Jeans",
       price: "$70",
     },
     {
+      id:"6",
       name: "Shirt black color",
       price: "$50",
     },
     {
+      id:"7",
       name: "Shirt white color",
       price: "$45",
     },
     {
+      id:"8",
       name: "Blue Jeans",
       price: "$70",
     },
     {
+      id:"9",
       name: "Shirt black color",
       price: "$50",
     },
     {
+      id:"10",
       name: "Blue Jeans",
       price: "$70",
     },
     {
+      id:"11",
       name: "Shirt black color",
       price: "$50",
     },

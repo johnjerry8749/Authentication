@@ -1,12 +1,14 @@
 import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import Logo from "../../assets/front/logo.png";
+import { useCart } from "../context/CartContext";
 import cart_icon from "../../assets/front/cart_icon.png";
 import user_icon from "../../assets/front/profile_icon.png";
 import search_icon from "../../assets/front/search_icon.png";
 import menu_icon from "../../assets/front/menu_icon.png";
 
 const Navbar = () => {
+  const { cartCount } = useCart();
   const navigate = useNavigate();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -91,9 +93,11 @@ const Navbar = () => {
                   style={{ width: "25px", height: "auto", cursor: "pointer" }}
                   onClick={Cartpage}
                 />
+                {cartCount > 0 && (
                 <div className="border border-danger translate-middle badge rounded-circle bg-danger">
-                  3
+                  {cartCount}
                 </div>
+                )}
               </div>
               {/* Mobile Menu Icon */}
               <div className="image-container ps-2 mt-2 d-lg-none d-md-flex">

@@ -221,7 +221,7 @@ const Shop = () => {
               >
                 <div
                   className="card h-100 shadow-sm"
-                  onClick={productDetails(products.id)}
+                  onClick= {() => productDetails(product.id)}
                   style={{ cursor: "pointer" }}
                 >
                   <div className="card-body text-center">

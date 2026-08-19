@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import Logo from "../../assets/front/logo.png";
 import cart_icon from "../../assets/front/cart_icon.png";
@@ -7,12 +7,20 @@ import search_icon from "../../assets/front/search_icon.png";
 import menu_icon from "../../assets/front/menu_icon.png";
 
 const Navbar = () => {
+  const navigate = useNavigate();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
+  const Cartpage = () => {
+    navigate("/Cart");
+  };
+
+  const Loginpage = () => {
+    navigate("/Login");
+  };
   return (
     <>
       {/* Top Info Bar */}
@@ -44,7 +52,10 @@ const Navbar = () => {
                 <Link to="/" className="text-decoration-none text-dark">
                   Home
                 </Link>
-                <Link to="/Collections" className="text-decoration-none text-dark">
+                <Link
+                  to="/Collections"
+                  className="text-decoration-none text-dark"
+                >
                   Collection
                 </Link>
                 <Link to="/About" className="text-decoration-none text-dark">
@@ -70,6 +81,7 @@ const Navbar = () => {
                   src={user_icon}
                   alt="user"
                   style={{ width: "25px", height: "auto", cursor: "pointer" }}
+                  onClick={Loginpage}
                 />
               </div>
               <div className="image-container ps-2 mt-2">
@@ -77,6 +89,7 @@ const Navbar = () => {
                   src={cart_icon}
                   alt="cart"
                   style={{ width: "25px", height: "auto", cursor: "pointer" }}
+                  onClick={Cartpage}
                 />
                 <div className="border border-danger translate-middle badge rounded-circle bg-danger">
                   3

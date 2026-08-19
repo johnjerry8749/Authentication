@@ -133,7 +133,7 @@ const ProductDetails = () => {
 
   // FIND THE PRODUCT THAT WAS CLICKED
   const product =
-    Bestsells.find && products.find((item) => item.id === Number(id));
+    Bestsells.find && products.find((item) => item.id === id);
 
   // PRODUCT NOT FOUND
   if (!product) {

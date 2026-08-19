@@ -4,15 +4,16 @@ import Productimg2 from "../../assets/front/p_img49.png";
 import { useNavigate } from "react-router-dom";
 
 const ProductDetails = () => {
-
-   const navigate = useNavigate();
+  const navigate = useNavigate();
 
   const productDetails = (id) => {
     navigate(`/productdetails/${id}`);
   };
+  const addtoacart = (id) => {
+    navigate(`/Cart/${id}`);
+  };
 
-
-   const Bestsells = [
+  const Bestsells = [
     {
       name: "Shirt black color",
       price: "$50",
@@ -30,7 +31,7 @@ const ProductDetails = () => {
       price: "$50",
     },
   ];
-  
+
   return (
     <div className="bg-white">
       <Navbar />
@@ -158,7 +159,7 @@ const ProductDetails = () => {
 
               {/* Buttons */}
               <div className="d-flex gap-2 mb-4">
-                <button className="btn btn-dark flex-grow-1 py-3 fw-semibold">
+                <button className="btn btn-dark flex-grow-1 py-3 fw-semibold" onClick={addtoacart}>
                   ADD TO CART
                 </button>
               </div>
@@ -267,42 +268,42 @@ const ProductDetails = () => {
           </div>
         </div>
         <div className="container-fluid  p-3 p-md-4">
-                  <div className="row g-3 g-md-4 mx-auto " style={{ width: "90%" }}>
-                    {Bestsells.map((Bestsell, index) => (
-                      <div
-                        className="col-6 col-md-4 col-lg-3"
-                        key={Bestsell.id || index}
-                      >
-                        <div
-                          className="card h-100 shadow-sm"
-                          onClick={productDetails}
-                          style={{ cursor: "pointer" }}
-                        >
-                          <div className="card-body text-center">
-                            <img
-                              src={Productimg2}
-                              alt={Bestsell.name}
-                              className="img-fluid"
-                              style={{
-                                height: "260px",
-                                width: "100%",
-                                objectFit: "cover",
-                              }}
-                            />
-        
-                            <p className="card-text mt-3 mb-1 fw-semibold">
-                              {Bestsell.name}
-                            </p>
-        
-                            <p className="card-text text-success fw-bold">
-                              {Bestsell.price}
-                            </p>
-                          </div>
-                        </div>
-                      </div>
-                    ))}
+          <div className="row g-3 g-md-4 mx-auto " style={{ width: "90%" }}>
+            {Bestsells.map((Bestsell, index) => (
+              <div
+                className="col-6 col-md-4 col-lg-3"
+                key={Bestsell.id || index}
+              >
+                <div
+                  className="card h-100 shadow-sm"
+                  onClick={productDetails}
+                  style={{ cursor: "pointer" }}
+                >
+                  <div className="card-body text-center">
+                    <img
+                      src={Productimg2}
+                      alt={Bestsell.name}
+                      className="img-fluid"
+                      style={{
+                        height: "260px",
+                        width: "100%",
+                        objectFit: "cover",
+                      }}
+                    />
+
+                    <p className="card-text mt-3 mb-1 fw-semibold">
+                      {Bestsell.name}
+                    </p>
+
+                    <p className="card-text text-success fw-bold">
+                      {Bestsell.price}
+                    </p>
                   </div>
                 </div>
+              </div>
+            ))}
+          </div>
+        </div>
       </div>
 
       <Footer />

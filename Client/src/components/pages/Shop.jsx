@@ -14,85 +14,120 @@ const Shop = () => {
 
   const Bestsells = [
     {
-      id:"1",
+      id: 1,
       name: "Shirt black color",
-      price: "$50",
+      price: 50,
     },
     {
-      id:"2",
+      id: 2,
       name: "Shirt white color",
-      price: "$45",
+      price: 45,
     },
     {
-      id:"3",
+      id: 3,
       name: "Blue Jeans",
-      price: "$70",
+      price: 70,
     },
     {
-      id:"3",
+      id: 4,
       name: "Shirt black color",
-      price: "$50",
+      price: 50,
+    },
+    {
+      id: 5,
+      name: "Classic T-Shirt",
+      price: 55,
+    },
+    {
+      id: 6,
+      name: "Slim Fit Jeans",
+      price: 75,
+    },
+    {
+      id: 7,
+      name: "Winter Jacket",
+      price: 95,
+    },
+    {
+      id: 8,
+      name: "White Polo",
+      price: 60,
+    },
+    {
+      id: 9,
+      name: "Casual Shirt",
+      price: 65,
+    },
+    {
+      id: 10,
+      name: "Black Trousers",
+      price: 80,
+    },
+    {
+      id: 11,
+      name: "Denim Jacket",
+      price: 90,
+    },
+    {
+      id: 12,
+      name: "Cotton Shirt",
+      price: 48,
     },
   ];
 
   const product = [
     {
-      id:"1",
+      id: 1,
       name: "Shirt black color",
       price: "$50",
     },
     {
-      id:"2",
+      id: 2,
+      name: "Blue Jeans",
+      price: "$70",
+    },
+    {
+      id: 3,
+      name: "Shirt black color",
+      price: "$50",
+    },
+    {
+      id: 4,
       name: "Shirt white color",
       price: "$45",
     },
     {
-      id:"3",
+      id: 5,
       name: "Blue Jeans",
       price: "$70",
     },
     {
-      id:"4",
+      id: 6,
       name: "Shirt black color",
       price: "$50",
     },
     {
-      id:"5",
+      id: 7,
       name: "Shirt white color",
       price: "$45",
     },
     {
-      id:"5",
+      id: 8,
       name: "Blue Jeans",
       price: "$70",
     },
     {
-      id:"6",
+      id: 9,
       name: "Shirt black color",
       price: "$50",
     },
     {
-      id:"7",
-      name: "Shirt white color",
-      price: "$45",
-    },
-    {
-      id:"8",
+      id: 10,
       name: "Blue Jeans",
       price: "$70",
     },
     {
-      id:"9",
-      name: "Shirt black color",
-      price: "$50",
-    },
-    {
-      id:"10",
-      name: "Blue Jeans",
-      price: "$70",
-    },
-    {
-      id:"11",
+      id: 11,
       name: "Shirt black color",
       price: "$50",
     },
@@ -186,7 +221,7 @@ const Shop = () => {
               >
                 <div
                   className="card h-100 shadow-sm"
-                  onClick={productDetails}
+                  onClick={productDetails(products.id)}
                   style={{ cursor: "pointer" }}
                 >
                   <div className="card-body text-center">
@@ -268,7 +303,7 @@ const Shop = () => {
               >
                 <div
                   className="card h-100 shadow-sm"
-                  onClick={productDetails}
+                  onClick={productDetails(Bestsell.id)}
                   style={{ cursor: "pointer" }}
                 >
                   <div className="card-body text-center">

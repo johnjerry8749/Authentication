@@ -95,9 +95,9 @@ const Collections = () => {
     setSortOpen(false);
   };
 
-  const productDetails = (id) => {
-    navigate(`/productdetails/${id}`);
-  };
+  const productDetails = (product) => {
+  navigate(`/productdetails/${product.id}`);
+};
   
 
   return (
@@ -233,14 +233,13 @@ const Collections = () => {
           {/* MOBILE PRODUCT GRID */}
           <div className="product-grid row g-3 g-md-4 mt-3">
 
-            {Bestsells.map((product) => (
+            {Bestsells.map((product, index) => (
               <div
                 className="col-6 col-md-4"
-                key={product.id}
-              >
+                key={product.id || index}>
                 <div
                   className="product-card"
-                  onClick={productDetails}
+                  onClick={() => productDetails(product.id)}
                 >
 
                   <div className="product-image-wrapper">
@@ -402,14 +401,14 @@ const Collections = () => {
             {/* DESKTOP PRODUCT GRID */}
             <div className="row g-4 mt-3">
 
-              {Bestsells.map((product) => (
+              {Bestsells.map((product, index) => (
                 <div
                   className="col-lg-4 col-xl-4"
-                  key={product.id}
+                  key={product.id || index}
                 >
                   <div
                           className="card h-100 shadow-sm"
-                          onClick={productDetails}
+                          onClick={() => productDetails(product.id)}
                           style={{ cursor: "pointer" }}
                         >
 

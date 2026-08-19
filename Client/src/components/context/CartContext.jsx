@@ -9,7 +9,7 @@ export const CartProvider = ({ children }) => {
   const addToCart = (product) => {
     setCartItems((currentItems) => {
       const existingProduct = currentItems.find(
-        (item) => item.id === product.id
+        (item) => item.id === product.id,
       );
 
       if (existingProduct) {
@@ -19,7 +19,7 @@ export const CartProvider = ({ children }) => {
                 ...item,
                 quantity: item.quantity + 1,
               }
-            : item
+            : item,
         );
       }
 
@@ -36,7 +36,7 @@ export const CartProvider = ({ children }) => {
   // REMOVE PRODUCT
   const removeFromCart = (id) => {
     setCartItems((currentItems) =>
-      currentItems.filter((item) => item.id !== id)
+      currentItems.filter((item) => item.id !== id),
     );
   };
 
@@ -49,8 +49,8 @@ export const CartProvider = ({ children }) => {
               ...item,
               quantity: item.quantity + 1,
             }
-          : item
-      )
+          : item,
+      ),
     );
   };
 
@@ -64,23 +64,19 @@ export const CartProvider = ({ children }) => {
                 ...item,
                 quantity: item.quantity - 1,
               }
-            : item
+            : item,
         )
-        .filter((item) => item.quantity > 0)
+        .filter((item) => item.quantity > 0),
     );
   };
 
   // TOTAL NUMBER OF PRODUCTS
-  const cartCount = cartItems.reduce(
-    (total, item) => total + item.quantity,
-    0
-  );
+  const cartCount = cartItems.reduce((total, item) => total + item.quantity, 0);
 
   // SUBTOTAL
   const totalPrice = cartItems.reduce(
-    (total, item) =>
-      total + Number(item.price) * item.quantity,
-    0
+    (total, item) => total + Number(item.price) * item.quantity,
+    0,
   );
 
   return (
@@ -102,4 +98,4 @@ export const CartProvider = ({ children }) => {
 
 export const useCart = () => {
   return useContext(CartContext);
-}
+};

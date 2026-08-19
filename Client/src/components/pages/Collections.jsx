@@ -239,7 +239,7 @@ const Collections = () => {
                 key={product.id || index}>
                 <div
                   className="product-card"
-                  onClick={() => productDetails(product.id)}
+                  onClick={() => productDetails(product)}
                 >
 
                   <div className="product-image-wrapper">
@@ -408,7 +408,7 @@ const Collections = () => {
                 >
                   <div
                           className="card h-100 shadow-sm"
-                          onClick={() => productDetails(product.id)}
+                          onClick={() => productDetails(product)}
                           style={{ cursor: "pointer" }}
                         >
 

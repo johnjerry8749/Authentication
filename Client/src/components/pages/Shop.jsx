@@ -221,7 +221,7 @@ const Shop = () => {
               >
                 <div
                   className="card h-100 shadow-sm"
-                  onClick= {() => productDetails(product.id)}
+                  onClick= {() => productDetails(products.id)}
                   style={{ cursor: "pointer" }}
                 >
                   <div className="card-body text-center">
@@ -303,7 +303,7 @@ const Shop = () => {
               >
                 <div
                   className="card h-100 shadow-sm"
-                  onClick={productDetails(Bestsell.id)}
+                  onClick= {() => productDetails(Bestsell.id)}
                   style={{ cursor: "pointer" }}
                 >
                   <div className="card-body text-center">

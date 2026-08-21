@@ -127,7 +127,7 @@ const Register = () => {
               fontSize: "20px",
             }}
           >
-            Sign In
+            Sign Up
           </button>
         </div>
 

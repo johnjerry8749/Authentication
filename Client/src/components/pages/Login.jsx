@@ -94,7 +94,7 @@ const Login = () => {
               fontSize: "20px",
               color: "#111",
             }}
-          >
+          onClick={handleLogin}>
             Create account
           </button>
 

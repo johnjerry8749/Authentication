@@ -1,10 +1,17 @@
 import { useState } from "react";
 import Navbar from "../common/Navbar";
 import Footer from "../common/Footer";
+import { useNavigate } from "react-router-dom";
 
 const Login = () => {
+  const navigate = useNavigate();
+
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+
+   const handleLogin = () =>{
+    navigate('/Register')
+   }
 
   return (
     <div>

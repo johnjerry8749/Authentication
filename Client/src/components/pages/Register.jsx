@@ -1,11 +1,19 @@
 import { useState } from "react";
 import Navbar from "../common/Navbar";
 import Footer from "../common/Footer";
+import { useNavigate } from "react-router-dom";
 
 const Register = () => {
+  const navigate = useNavigate();
+
   const [email, setEmail] = useState("");
   const [name, setname] = useState("");
    const [password, setPassword] = useState("");
+
+   const handleLogin = () =>{
+    navigate('/Login')
+   }
+
 
   return (
     <div>
@@ -42,7 +50,7 @@ const Register = () => {
             type="name"
             className="form-control rounded-0 border-dark px-3"
             placeholder="Email"
-            value={email}
+            value={name}
             onChange={(e) => setname(e.target.value)}
             style={{
               height: "62px",
@@ -102,8 +110,8 @@ const Register = () => {
               fontSize: "20px",
               color: "#111",
             }}
-          >
-            Create account
+          onClick={handleLogin}>
+            Login
           </button>
 
         </div>

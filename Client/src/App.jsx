@@ -5,6 +5,7 @@ import Collections from "./components/pages/Collections.jsx";
 import Contact from "./components/pages/Contact.jsx";
 import About from "./components/pages/About.jsx";
 import Cart from "./components/pages/Cart.jsx";
+import Login from "./components/pages/Login.jsx";
 
 const App = () => {
   return (
@@ -17,6 +18,7 @@ const App = () => {
         <Route path="/Contact" element={<Contact />} />
         <Route path="/About" element={<About />} />
         <Route path="/Cart" element={<Cart />} />
+        <Route path="/Login" element={<Login />} />
       </Routes>
     </div>
   );

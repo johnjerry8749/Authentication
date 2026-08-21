@@ -6,6 +6,7 @@ import Contact from "./components/pages/Contact.jsx";
 import About from "./components/pages/About.jsx";
 import Cart from "./components/pages/Cart.jsx";
 import Login from "./components/pages/Login.jsx";
+import Register from "./components/pages/Register.jsx";
 
 const App = () => {
   return (
@@ -19,6 +20,7 @@ const App = () => {
         <Route path="/About" element={<About />} />
         <Route path="/Cart" element={<Cart />} />
         <Route path="/Login" element={<Login />} />
+        <Route path="/Register" element={<Register />} />
       </Routes>
     </div>
   );
